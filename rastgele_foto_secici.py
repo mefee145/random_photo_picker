@@ -1,15 +1,15 @@
 import os, random, subprocess
 
-klasor = r"C:\Users\muham\Desktop\EFE\ÖZEL!\ADAYLAR"
+folder = r"Folder_Path"
 
-uzantilar = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
+Extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')
 
-foto_listesi = [f for f in os.listdir(klasor) if f.lower().endswith(uzantilar)]
+phot_list = [f for f in os.listdir(folder) if f.lower().endswith(Extensions)]
 
-if foto_listesi:
-    secilen = random.choice(foto_listesi)
-    tam_yol = os.path.join(klasor, secilen)
-    print(f"Seçilen Fotoğraf:{tam_yol}")
-    subprocess.run(["start", "", tam_yol], shell=True)
+if photo_list:
+    selected = random.choice(photo_list)
+    path = os.path.join(folder, selected)
+    print(f"Selected photo:{path}")
+    subprocess.run(["start", "", path], shell=True)
 else:
-    print("Hata: Fotoğraf bulunamadı!")
+    print("Error: Not Found Photo!")
